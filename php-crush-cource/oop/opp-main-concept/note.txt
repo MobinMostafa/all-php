@@ -1,0 +1,72 @@
+OOP in PHP and Laravel
+Complete Guide: concepts, real world use, Laravel layers, enterprise architecture,
+PHP vs JavaScript
+What is inside
+Part 1 - Summary of all OOP topics (4 pillars, 16 topics)
+Part 2 - Sixteen topics: meaning, PHP example, real world use, Laravel
+Part 3 - Laravel: Route, Middleware, Controller, Model, Migration, Service
+Part 4 - Enterprise architecture: layers, SOLID, patterns, checklist
+Part 5 - PHP vs JavaScript syntax table
+Part 6 - Revision sheet
+
+
+Part 1: Summary - All OOP Topics
+OOP means Object Oriented Programming. You put data and the functions that work on that data together inside
+one class. Almost every language (PHP, JavaScript, Java, C#, Python) uses the same ideas. Only the syntax is
+different. This guide uses PHP for examples and shows exactly where Laravel uses each idea.
+Total: 4 pillars + 16 topics. The 4 pillars are the big ideas. The 16 topics are the keywords and tools you write in
+code. Every pillar is covered by the topics below.
+The 4 Pillars of OOP
+1. Encapsulation - hide data, allow change only through methods (topic 5).
+2. Abstraction - show only what is needed, hide the details (topics 9, 10).
+3. Inheritance - child class reuses parent class code (topic 8).
+4. Polymorphism - same method name, different behavior (topic 12).
+No Topic PHP keyword One line meaning Laravel example
+1 Class and Object class, new Blueprint and the real thing made
+from it
+Every Model, Controller, Job
+2 Property, Method,
+$this
+public $x, function, $this-> Data inside class, action inside class $fillable, scopeActive()
+3 Constructor __construct Runs automatically when object is
+created
+Controller/Service dependency
+injection
+4 Destructor __destruct Runs when object is destroyed Rare. Use try/finally instead
+5 Visibility
+(Encapsulation)
+public protected private
+readonly
+Who can touch the data $fillable, $hidden
+6 Static and :: static, self::, parent::,
+static::
+Belongs to class, not to object Product::find(), Cache::get()
+7 Constant and Enum const, enum Fixed value that never changes OrderStatus enum cast
+8 Inheritance extends, parent:: Child gets parent code extends Model / Controller
+9 Abstract class abstract Half-built parent, child must finish it Model, base Controller,
+BaseRepository
+10 Interface interface, implements Contract: only method names ShouldQueue, PaymentGateway
+11 Trait trait, use Copy reusable methods into many
+classes
+HasFactory, SoftDeletes
+12 Polymorphism interface + override Same call, different result Cache/Mail/Storage drivers, morphTo
+13 final final Cannot extend or override Action and Value classes
+14 Namespace and use namespace, use Folder-like names to avoid conflict App\Models\User
+15 Magic methods __get __set __call
+__invoke __toString
+Special methods PHP calls for you $user->name, Facades, invokable
+controller
+16 Dependency Injection type-hint in __construct Give the object what it needs from
+outside
+Service Container, bind()
+Quick answer: how many keywords?
+PHP OOP keywords you must know: class, new, extends, implements, abstract, interface, trait, use, final, static, self, parent,
+public, protected, private, readonly, const, enum, namespace, $this, instanceof, clone = 22 keywords. Magic methods: 7
+important ones.
+These ideas are the same in all languages. See Part 5 for the PHP vs JavaScript table.
+
+How to read each chapter
+Each chapter has the same 5 blocks: Keywords, Meaning, PHP example, Real world use, Where Laravel uses it. A red "Remember" box
+gives a warning or tip.
+Guide map: Part 1 Summary | Part 2 Sixteen topics in detail | Part 3 Laravel layer by layer (Route, Middleware,
+Controller,
